@@ -1,0 +1,148 @@
+{include file="../application/admin/view/Public/_meta.html"/}
+ <body>
+        <div class="layui-fluid">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+					    
+					    <div class="layui-inline">
+					      <label class="layui-form-label">时间类别</label>
+					      <div class="layui-input-inline">
+					        <select lay-filter="type" name="modules" class="select" id="type" lay-verify="required">
+					          <option value="1">网上报名时间</option>
+					          <option value="2">准考证打印时间</option>
+					          <option value="3">考试时间</option>
+					          <option value="4">成绩公布时间</option>
+					        </select>
+					      </div>
+					    </div>
+					</div>
+
+
+
+
+					<div class="layui-form-item" id="time">
+						<div class="layui-inline">
+					      <label class="layui-form-label">日期范围</label>
+					      <div class="layui-input-inline">
+					        <input type="text" class="layui-input" id="test6" placeholder=" - " autocomplete="off">
+					      </div>
+					    </div>
+					</div>
+
+					<div class="layui-inline" id="start" style="display: none;">
+				      <label class="layui-form-label">开始时间</label>
+				      <div class="layui-input-inline">
+				        <input type="text" class="layui-input" id="start_time" placeholder="yyyy-MM-dd HH:mm:ss" autocomplete="off">
+				      </div>
+				    </div><br>
+
+				    <div class="layui-inline" id="end" style="display: none;">
+				      <label class="layui-form-label">结束时间</label>
+				      <div class="layui-input-inline">
+				        <input type="text" class="layui-input" id="end_time" placeholder="yyyy-MM-dd HH:mm:ss" autocomplete="off">
+				      </div>
+				    </div>
+
+                    
+			        <div class="layui-form-item">
+			            <label for="L_repass" class="layui-form-label"></label>
+			            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button>
+			        </div>
+			    </form>
+			</div>
+        </div>
+
+
+{include file="../application/admin/view/Public/_footer.html"/}<!-- 配置文件 -->
+	    
+        <script>
+
+        	layui.use(['form', 'layer'],function() {
+                $ = layui.jquery;
+                var form = layui.form;
+                form.on('select(type)', function(data){
+		       	  console.log(data.value); //得到被选中的值
+		       	  switch (data.value) {
+                    case ("1"):
+                    	$('#start').css('display','none');
+                    	$('#end').css('display','none');
+                    	$('#time').css('display','block');
+                        break;
+                    case ("2"):
+                    	$('#start').css('display','none');
+                    	$('#end').css('display','none');
+                    	$('#time').css('display','block');
+                        break;
+                    case ("3"):
+                    	$('#start').css('display','block');
+                    	$('#end').css('display','block');
+                    	$('#time').css('display','none');
+                        break;
+                    case ("4"):
+                    	$('#start').css('display','none');
+                    	$('#end').css('display','none');
+                    	$('#time').css('display','block');
+                        break;
+                    default:
+                }
+		       });
+			
+            });
+
+        	layui.use('laydate', function(){
+			  	var laydate = layui.laydate;
+			   	//日期时间范围
+				  laydate.render({
+				    elem: '#test6'
+				    ,type: 'datetime'
+				    ,range: ' - '
+				    ,format: 'yyyy年M月d日H时m分s秒'
+				  });
+
+
+				  //日期时间选择器
+				  laydate.render({
+				    elem: '#start_time'
+				    ,type: 'datetime'
+				  });
+				  laydate.render({
+				    elem: '#end_time'
+				    ,type: 'datetime'
+				  });
+			});
+
+
+        	layui.use(['form', 'layer'],function() {
+                $ = layui.jquery;
+                var form = layui.form;
+
+
+                layer = layui.layer;
+                //监听提交
+                form.on('submit(add)',function(data) {
+                    //发异步，把数据提交给php
+                    var index = layer.load(1, {time: 10*1000}); //0代表加载的风格，支持0-2
+                    $.ajax({
+                        type:"POST",
+                        dataType:"json",
+                        url:"{:url('Admin/index/recruit_plan_add')}",
+                        data:{type:data.field.modules,time:$("#test6").val(),id:{$id}},
+                        success:function(data){
+                          if (data.code == 1) {
+                          	window.parent.location.reload();//刷新父页面
+				            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+				            parent.layer.close(index);
+                          }else{
+                            layer.msg(data.msg, {time: 2000, icon:5});
+                            layer.close(index);
+                            return false;
+                          }
+                        }
+                    });
+                });
+            });
+           
+        </script>
+
+</html>

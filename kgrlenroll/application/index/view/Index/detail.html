@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.hdh.im/details/5da97eb36623661f183c986e -->
+<html ng-app="MyApp" class="ng-scope"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+	@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}
+	</style>
+        <title>空港人力-招聘报名系统</title>
+        
+        
+        <!-- 指定以最新的IE版本模式来显示网页 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 针对360浏览器的内核调用,强制调用极速模式 -->
+        <meta name="renderer" content="webkit">
+        <!-- 针对360浏览器强制调用IE标准模式 -->
+        <!--[if lt IE 10]>
+        <meta name="renderer" content="ie-stand" />
+        <![endif]-->
+        <!--[if !IE]>
+        <meta name="renderer" content="ie-stand" />
+        <!<![endif]-->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="shortcut icon" href="#" type="image/x-icon">
+        
+        <!--Basic Styles-->
+        <link href="__STATIC__/demo/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/demo/font-awesome.min.css" rel="stylesheet">
+        <link id="beyond-link" href="__STATIC__/demo/beyond.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="__STATIC__/demo/auiicon.css">
+        <link rel="stylesheet" href="__STATIC__/demo/base.css">
+        <link rel="stylesheet" href="__STATIC__/demo/opensans.css">
+        <link href="__STATIC__/demo/darkblue.min.css" rel="stylesheet" type="text/css">
+        <link href="__STATIC__/demo/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+        <script src="__STATIC__/demo/jquery.min.js"></script>
+        <!-- 外部引入的css文件模块 -->
+        
+        <!-- 页面头部style样式模块 -->
+        
+
+    <body>
+ <!-- 网站主体内容模块 -->
+<!-- 横版-->
+
+        {include file="../application/index/view/Public/_header.html"/}
+
+<!-- 判断导航是竖版 -->
+	<!-- 有banner时显示  没有不显示 -->
+<!-- 活动承办方 -->
+<div class=" padding-top-30 hde-bg">
+	<div class="con-w  act-cbf-box  bordered-bottom-1 bordered-ivory padding-bottom-20" style="padding-top: 5%">
+	    <div class="row">
+	    	<div class="col-xs-12">
+	    		<div class="row">
+	    			<div class="col-xs-9 ">
+			            <h3 class="text-ellipsis-2" title="{$info.title}">{$info.title}</h3>
+			    	</div>
+			    	<div class="col-xs-3 ">
+					        <div class="hd-label text-right"></div>
+				    </div>	    		
+				</div>
+	    	</div>
+	    	<div class="col-xs-12 margin-top-10 padding-top-5">
+	    		<div class="row">
+	    			<div class="col-xs-7 "></div>    		
+		    	</div>
+	    	</div>
+	    </div>
+    </div>
+	<div class="con-w hd-detail-msg">
+		<div class="row">
+			<div class="col-xs-9 hd-dmag-left">
+				<div class="det-mag-r pull-left">
+					<p class="themeprimary ">
+						报名时间： <?php echo $plan['start_time']?> ～ <?php echo $plan['end_time']?>				
+					</p>
+					<a  href="#item3" class="btn btn-primary btn-lg margin-top-10 act-bm-btn">我要报名</a>	
+				</div>
+				<div class="det-mag-l pull-left">
+					<img class="lazy" src="__STATIC__/demo/indeximg/logo.jpg" style="display: inline;">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 活动介绍 -->
+	<div class="hd-detial-contxt hde-bg item " id="item1" style="background-color: rgb(255,255,255);">
+		<div class="con-w padding-top-50 padding-bottom-50">
+			<h2 class="text-center hdinfo-tit">
+				<span class=" padding-bottom-5">招聘简介</span>
+			</h2>
+			<div class="hdd-txt margin-top-30 font-120">
+				<div class="news_txt">
+					{$info.content}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="act-tick-type padding-top-50 padding-bottom-50 hde-bg item" id="item3">
+		<div class="con-w hd-tick-type">
+			<h2 class="text-center hdinfo-tit">
+				<span class=" padding-bottom-5">岗位列表</span>
+			</h2>
+			<input type="hidden" value="2" id="h_isdan">
+			<table class="table margin-top-30">
+				<thead>
+					<tr class="info">
+						<th>岗位名称</th>
+						<th>所属单位</th>
+						<th>岗位招聘数量</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+					<tbody>
+						{volist name="job" id="vo"}
+						<tr class="ticketinfo tjinfo">
+								<td>
+									<p class="text-ellipsis-1">
+									<span style="color:#444;">{$vo.name}</span>
+									</p>
+								</td>
+								<td>
+									<span class="success">{$vo.company}</span>
+								</td>
+								<td>
+									<span class="success piaojia_">{$vo.num}</span>
+									<input type="hidden" value="0">
+								</td>
+								<td>
+									<a onclick="next({$vo.id})" class="btn btn-primary btn-lg">我要报名</a>
+								</td>
+
+						</tr>
+						{/volist}		
+					</tbody>
+			</table>
+		</div>
+	</div>
+<!-- 网站底部内容模块 -->
+        
+<div class="footer margin-top-50">
+    <div class="con-w footer-inner  padding-top-30 text-center">
+        <dl>
+            <dt>
+            空港人力-报名系统
+            </dt>
+            <dd>
+            <a href="#" target="_blank">联系方式</a>
+            </dd>
+        </dl>
+        <dl class="">
+            <dt>
+            微信公众号
+            </dt>
+            <dd>
+            <a><img src="__STATIC__/demo/weixin.jpg" width="100"></a>
+            </dd>
+        </dl>
+    </div>
+    <p class=" text-center darkgray padding-top-10">© 2020 空港人力 | 渝ICP备xxxxxx号 | 通讯地址：重庆市渝北区春华大道99号<br>招聘报名系统　版权所有</p>
+</div>
+
+
+        {include file="../application/index/view/Public/_footer.html"/}
+
+</body></html>
+
+<script type="text/javascript">
+	function next(id) {
+		if(confirm("确认选择吗?")){
+			$.ajax({
+		        type:"POST",
+		        dataType:"json",
+		        url:"{:url('Index/index/enroll_check_state')}",
+		        data:{job_id:id},
+		        success:function(data){
+		          if (data.code == 1) {
+		          	window.location.href = "/kgrlenroll/public/index.php/index/index/enroll?job_id="+id;
+		          }else{
+		            layer.msg(data.msg, {time: 2000, icon:5});
+		            layer.close(index);
+		            return false;
+		          }
+		        }
+		    });
+			
+		}else{
+		   
+		}
+	}
+</script>

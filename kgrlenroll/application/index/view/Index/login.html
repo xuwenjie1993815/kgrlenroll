@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.hdh.im/details/5da97eb36623661f183c986e -->
+<html ng-app="MyApp" class="ng-scope"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<style type="text/css">
+		/* 公共属性 */
+		*{margin:0;padding:0;list-style:none;}
+		body{background:#fff;font:normal 12px/22px "Microsoft Yahei";}
+		img{border:0;}
+		a{text-decoration:none;color:#333;}
+		a:hover{color:#1974A1;}
+		.clearfix:after,.clearfix:before{display:table;line-height:0;content:""}
+		.clearfix:after{clear:both}
+
+		/* 主要样式 */
+		.container{width:1180px;margin-right:auto;margin-left:auto;*zoom:1}
+		.process{padding:80px 0;text-align:center;}
+		.process h3{font-size:30px;line-height:52px;color:#23292E;font-weight:400;}
+		.process p{line-height:26px;font-size:14px;color:#999;}
+		.process .flowline{margin-top:50px;margin-left:40px;*zoom:1}
+		.process .flowline li{float:left;margin-left:110px;text-align:center;list-style:none}
+		.process .flowline li .icon-block{position:relative;display:inline-block;width:72px;height:72px;-webkit-border-radius:72px;-moz-border-radius:72px;border-radius:72px;background-color:#181820;line-height:0;margin-top:0}
+		.process .flowline li .icon-block img{width:32px;height:32px;background:url(../images/icon.png) 0 0 no-repeat;background-size:192px 64px;margin:20px 20px 0 20px}
+		.process .flowline li .icon-block:before{content:''}
+		.process .flowline li .icon-block span{margin:0}
+		.process .flowline li span{display:inline-block;margin-top:20px;font-size:18px;line-height:36px;color:#333}
+
+		.process .flowline li.process-1{margin-left:28%}
+		.process .flowline li.process-3{margin-left:115px}
+		.process .flowline li.process-3 .flow-line{display:none}
+		.process .flowline .flow-line{position:absolute;top:36px;left:92px;width:77px;border-bottom:1px dotted #979797}.
+	</style>
+        <title>空港人力-招聘报名系统</title>
+        
+        
+        <!-- 指定以最新的IE版本模式来显示网页 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 针对360浏览器的内核调用,强制调用极速模式 -->
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        
+        <!--Basic Styles-->
+        <link href="__STATIC__/demo/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/demo/font-awesome.min.css" rel="stylesheet">
+        <link id="beyond-link" href="__STATIC__/demo/beyond.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="__STATIC__/demo/auiicon.css">
+        <link rel="stylesheet" href="__STATIC__/demo/base.css">
+        <link rel="stylesheet" href="__STATIC__/demo/opensans.css">
+        <link href="__STATIC__/demo/darkblue.min.css" rel="stylesheet" type="text/css">
+        <link href="__STATIC__/demo/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+        <script src="__STATIC__/demo/jquery.min.js"></script>
+        <!-- 外部引入的css文件模块 -->
+        <!-- 页面头部style样式模块 -->
+<body>
+<div class="act-intro-header bg-white" style="display: block;">
+    <div style="margin-left: 2%">            
+	    <a href="/kgrlenroll/public" class="hd-per-tit pull-left">
+	        <img class="pc-logo" src="__STATIC__/demo/indeximg/logo.jpg" width="140" height="44">
+	    </a>
+	</div>        
+</div>
+<link rel="stylesheet" href="__STATIC__/demo/login/dmaku.css">
+
+<div class="cotn_principal">
+  <div class="cont_centrar" style="margin-top: 5%">
+    <div class="cont_login">
+      <div class="cont_info_log_sign_up">
+        <div class="col_md_login">
+          <div class="cont_ba_opcitiy">
+            <h2>登录</h2>
+            <p>已有账号，直接登录！</p>
+            <button class="btn_login" onclick="cambiar_login()">登录</button>
+          </div>
+        </div>
+        <div class="col_md_sign_up">
+          <div class="cont_ba_opcitiy">
+            <h2>注册</h2>
+            <p>还没有账号？免费注册！</p>
+            <button class="btn_sign_up" onclick="cambiar_sign_up()">注册</button>
+          </div>
+        </div>
+      </div>
+      <div class="cont_back_info">
+        <div class="cont_img_back_grey"> <img src="__STATIC__/demo/login/po.jpg" alt=""> </div>
+      </div>
+      <div class="cont_forms">
+        <div class="cont_img_back_"> <img src="__STATIC__/demo/login/po.jpg" alt=""> </div>
+        <div class="cont_form_login" style="display: none; opacity: 0;"> <a href="/kgrlenroll/public/index.php/index/login" onclick="ocultar_login_sign_up()">X</a>
+          <h2>登录</h2>
+          <input type="text" id="username" placeholder="身份证">
+          <input type="password" id="password" placeholder="密码">
+          <button class="btn_login" id="sub">登录</button>
+        </div>
+        <div class="cont_form_sign_up" style="opacity: 0; display: none;"> <a href="/kgrlenroll/public/index.php/index/login" onclick="ocultar_login_sign_up()">X</a>
+          <h2>注册</h2>
+          <input type="text" placeholder="手机号">
+          <input type="number" placeholder="验证码" style="width: 54%"> <button type="button" style="background-color:#FF9800;padding:10px;border:none;color: #fff;">获取验证码</button>
+          <input type="password" placeholder="密码">
+          <input type="password" placeholder="确认密码">
+          <button class="btn_sign_up" onclick="cambiar_sign_up()">注册</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="__STATIC__/demo/login/dmaku.js"></script>
+<script src="__STATIC__/demo/login/layui.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$(document).keyup(function(event){
+	  if(event.keyCode ==13){
+	    $("#sub").trigger("click");
+	  }
+	});
+	$("#sub").click(function () {
+		$.ajax({
+			type:"POST",
+			dataType:"json",
+			url:"{:url('index/login/login')}",
+			data:{username:$("#username").val(),password:$("#password").val()},
+			success:function(data){
+			  if (data.code == 1) {
+				location.href='http://'+window.location.host+'/kgrlenroll/public/index.php/index';
+			  }else{
+			  	alert(data.msg);
+			  	return;
+			  }
+			}
+		});
+	});
+
+</script>
+
+
+</body></html>

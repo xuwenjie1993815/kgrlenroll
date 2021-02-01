@@ -1,0 +1,23 @@
+    <div id="header" class="bg-themeprimary" style="background-color: rgb(255,255,255);">
+        <div class="header-inner con-w">
+            <div class="col-lg-7 col-md-7 col-xs-7   pull-left in-hd-l no-padding-left">
+                
+                    <a href="/kgrlenroll/public" class="hd-per-tit pull-left">
+                        <img class="pc-logo" src="__STATIC__/demo/indeximg/logo.jpg" width="140" height="44">
+                    </a>       
+            </div>
+            <!-- 登陆 -->
+            <div class="col-lg-5 col-md-5 col-xs-5 in-hd-r text-right " >
+                {if condition="$userInfo eq ''"}
+                    <div class="pull-right"style="color: rgb(83,83,83);">
+                    	<a href="/kgrlenroll/public/index.php/index/login/index.html" class="btn btn-link " >登录</a>
+                    </div>
+                {else/}
+                    <div style="margin-top: 2%">
+                        <span style="color: rgb(83,83,83); ">欢迎： <a href="">{$userInfo.username}</a> <a id="loginout" style="margin-left: 5%; cursor: pointer;">退出登录</a></span> 
+                    </div>
+                {/if}                    
+                
+            </div>
+        </div>
+    </div>

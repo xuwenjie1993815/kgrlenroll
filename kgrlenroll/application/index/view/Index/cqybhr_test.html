@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渝北就业人才网企业信息补充</title>
+    <style type="text/css">
+        * { margin: 0; padding: 0; outline: none;}
+        #fuzhi { text-align: center;}
+        #fuzhi input { margin-left: 40%; width: 400px; height: 40px; padding: 0 10px; border: 1px solid #dcdfe6;}*/
+        /*#fuzhi button { width: 60px; height: 42px; margin-left: 10px; border: 1px solid #dcdfe6; cursor: pointer;}
+        #fuzhi button:hover { color: #fff; border-color: #409eff; background-color: #409eff;}*/
+    </style>
+    <link href="__STATIC__/demo/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="fuzhi">
+        <h1 style="margin-bottom: 8%;margin-top: 10%">为响应重庆市人社局号召，请您完善以下企业信息后再使用网站相关功能</h1>
+
+        
+        <div class="form-group">
+            <label for="name">法定代表人:</label>
+            <input type="text" class="form-control" id="legle" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="name">统一社会信用代码:</label>
+            <input type="text" class="form-control" id="organcode" placeholder="">
+        </div>
+          <button type="submit" class="btn btn-default" id="sub">提交</button>
+        
+
+        
+    </div>
+</body>
+</html>
+<script src="__STATIC__/demo/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#sub").click(function () {
+        var legle = $("#legle").val();
+        var organcode = $("#organcode").val();
+        if (!legle || !organcode) {
+            alert('请完整填写信息');return;
+        }
+        $.ajax({
+            type:"POST",
+            dataType:"json",
+            url:"{:url('Index/index/cqybhr_test')}",
+            data:{legle:legle,organcode:organcode,uid:{$uid}},
+            success:function(data){
+                if (data.code == 1) {
+                    setTimeout(function () {
+                        alert('提交成功');
+                        window.location.href='http://www.cqybhr.com/'
+                    }, 3000);
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    })
+</script>

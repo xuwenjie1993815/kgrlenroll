@@ -1,0 +1,24 @@
+<script type="text/javascript" src="__STATIC__/jquery/1.9.1/jquery.min.js"></script> 
+<script src="__STATIC__/layer/2.4/layer.js" charset="utf-8"></script>
+<script type="text/javascript">
+	$("#loginout").click(function () {
+	layer.confirm('确认要注销吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: "/kgrlenroll/public/index.php/Index/login/loginout",
+			dataType: 'json',
+			success: function(data){
+	            if(data.code==1){
+	  				layer.msg('注销成功', {icon: 1,time:1000});
+                            window.location.reload();
+	            }else{
+	                layer.msg(data.msg,{icon:2,time:1000});
+                            window.location.reload();
+	            }
+			},
+		});		
+	});
+});
+
+
+</script>

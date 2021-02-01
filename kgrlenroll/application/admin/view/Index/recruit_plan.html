@@ -1,0 +1,53 @@
+{include file="../application/admin/view/Public/_meta.html"/}
+ <body>
+<div class="layui-card-header">
+    <button class="layui-btn" onclick="xadmin.open('新增时间安排','__URL__/recruit_plan_add.html?id={$id}')"><i class="layui-icon"></i>新增时间安排</button>
+</div>
+<div class="layui-card-body layui-table-body layui-table-main" >
+	<table class="layui-table layui-form">
+	    <thead>
+	      <tr>
+	        <th>时间类别</th>
+	        <th>开始日期</th>
+	        <th>终止日期</th>
+	        <th>操作</th></tr>
+	    </thead>
+	    <tbody>
+	    	{volist name="recruit_plan_list" id="vo"}
+			<tr>
+				<td>
+					{switch name="$vo.type" }
+					    {case value="1"}网上报名时间{/case}
+					    {case value="2"}准考证打印时间{/case}
+					    {case value="3"}考试时间{/case}
+					    {case value="4"}成绩公布时间{/case}
+					    {default /}默认情况
+					{/switch}
+				</td>
+				<td>{$vo.start_time}</td>
+				<td>{$vo.end_time}</td>
+				<td class="td-manage">
+				  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+				    <i class="layui-icon">&#xe601;</i>
+				  </a>
+				  <a title="编辑"  onclick="xadmin.open('编辑','member-edit.html',600,400)" href="javascript:;">
+				    <i class="layui-icon">&#xe642;</i>
+				  </a>
+				  <a onclick="xadmin.open('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
+				    <i class="layui-icon">&#xe631;</i>
+				  </a>
+				  <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+				    <i class="layui-icon">&#xe640;</i>
+				  </a>
+				</td>
+			</tr>
+			{/volist}
+	    </tbody>
+	</table>
+</div>
+{include file="../application/admin/view/Public/_footer.html"/}<!-- 配置文件 -->
+	    
+
+
+
+</html>

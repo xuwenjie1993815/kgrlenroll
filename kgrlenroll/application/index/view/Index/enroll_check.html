@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.hdh.im/details/5da97eb36623661f183c986e -->
+<html ng-app="MyApp" class="ng-scope"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="__STATIC__/x_admin/css/xadmin.css">
+    <script src="__STATIC__/x_admin/lib/layui/layui.js" charset="utf-8"></script>
+
+	<style type="text/css">
+		/* 公共属性 */
+		*{margin:0;padding:0;list-style:none;}
+		body{background:#fff;font:normal 12px/22px "Microsoft Yahei";}
+		img{border:0;}
+		a{text-decoration:none;color:#333;}
+		a:hover{color:#1974A1;}
+		.clearfix:after,.clearfix:before{display:table;line-height:0;content:""}
+		.clearfix:after{clear:both}
+
+		/* 主要样式 */
+		.container1{width:1180px;margin-right:auto;margin-left:auto;*zoom:1}
+		.process{padding:80px 0;text-align:center;}
+		.process h3{font-size:30px;line-height:52px;color:#23292E;font-weight:400;}
+		.process p{line-height:26px;font-size:14px;color:#999;}
+		.process .flowline{margin-top:50px;margin-left:40px;*zoom:1}
+		.process .flowline li{float:left;margin-left:110px;text-align:center;list-style:none}
+		.process .flowline li .icon-block{position:relative;display:inline-block;width:72px;height:72px;-webkit-border-radius:72px;-moz-border-radius:72px;border-radius:72px;background-color:#181820;line-height:0;margin-top:0}
+		.process .flowline li .icon-block img{width:32px;height:32px;background:url(../images/icon.png) 0 0 no-repeat;background-size:192px 64px;margin:20px 20px 0 20px}
+		.process .flowline li .icon-block:before{content:''}
+		.process .flowline li .icon-block span{margin:0}
+		.process .flowline li span{display:inline-block;margin-top:20px;font-size:18px;line-height:36px;color:#333}
+
+		.process .flowline li.process-1{margin-left:28%}
+		.process .flowline li.process-3{margin-left:115px}
+		.process .flowline li.process-3 .flow-line{display:none}
+		.process .flowline .flow-line{position:absolute;top:36px;left:92px;width:77px;border-bottom:1px dotted #979797}.
+
+
+	</style>
+        <title>空港人力-招聘报名系统</title>
+        
+        
+        <!-- 指定以最新的IE版本模式来显示网页 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 针对360浏览器的内核调用,强制调用极速模式 -->
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        
+        <!--Basic Styles-->
+        <link href="__STATIC__/demo/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/demo/font-awesome.min.css" rel="stylesheet">
+        <link id="beyond-link" href="__STATIC__/demo/beyond.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="__STATIC__/demo/auiicon.css">
+        <link rel="stylesheet" href="__STATIC__/demo/base.css">
+        <link rel="stylesheet" href="__STATIC__/demo/opensans.css">
+        <link href="__STATIC__/demo/darkblue.min.css" rel="stylesheet" type="text/css">
+        <link href="__STATIC__/demo/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+        <script src="__STATIC__/demo/jquery.min.js"></script>
+        <!-- 外部引入的css文件模块 -->
+        <!-- 页面头部style样式模块 -->
+<body>
+	<div class="act-intro-header bg-white" style="display: block;">
+        <div style="margin-left: 2%">            
+		    <a href="/kgrlenroll/public" class="hd-per-tit pull-left">
+		        <img class="pc-logo" src="__STATIC__/demo/indeximg/logo.jpg" width="140" height="44">
+		    </a>
+		</div>        
+	</div>
+
+	<!-- 进度 -->
+	<section class="process">
+		<div class="container1">
+			<h3>核对报名信息</h3>
+			<p>仅需3步，即可完成报名</p>
+			<ul class="flowline clearfix">
+				<li class="process-module process-1">
+					<span class="icon-block">
+						<img src="__STATIC__/demo/img/msg.png" alt="上传基本信息" style="background-position: -32px 0"> <br /> 
+						<span class="flow-line"></span>
+					</span>
+					<br />
+					<span>基本信息</span>
+				</li>
+				<li class="process-module process-2">
+					<span class="icon-block">
+						<img src="__STATIC__/demo/img/file.png" alt="上传相关文件" style="background-position: -64px 0"> <br /> 
+						<span class="flow-line"></span>
+					</span>
+					<br /> 
+					<span>相关文件</span> 
+				</li>
+				<li class="process-module process-3">
+					<span class="icon-block">
+						<img src="__STATIC__/demo/img/check.png" alt="核对信息,提交审核" style="background-position: -96px 0"> <br /> 
+						<span class="flow-line"></span> 
+					</span>
+					<br />
+					<span style="font-weight:bold;">核对信息</span> 
+				</li>
+			</ul> 
+		</div>
+	</section>
+	<!-- 进度 -->
+
+    <div class="hd-entry-wrap con-w  personal">
+        <div class=" hd-entry-left">
+            <div class="entry-l-brief bg-white padding-20 margin-bottom-20">
+                <div class="entry-bri-right pull-left padding-top-10">
+                    <a href=""><h3 class="text-ellipsis-2">{$recruit_info.title}</h3></a>
+                    <p class=" ">
+                        报名时间:<?php echo $plan['start_time']?> ～ <?php echo $plan['end_time']?>	                   
+                    </p>
+                    <p>
+                    	报名单位/岗位: <span style="color: red">{$job_info.company}/{$job_info.name}</span>
+                    </p>
+                </div>
+                <div class="entry-bri-left pull-left">
+                <a href="">
+                    <img src="#" ></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <!-- 表单开始 -->
+        	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+			  <legend>基本信息</legend>
+			</fieldset> 
+			<table class="layui-table"  lay-filter="test">
+			  <thead>
+			    <tr>
+			      <th style="width: 10%">姓名</th>
+			      <th>{$user_info.username}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">身份证</th>
+			      <th>{$user_info.pid}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">手机</th>
+			      <th>{$user_info.tel}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">通讯地址</th>
+			      <th>{$user_info.address}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">性别</th>
+			      <th>
+					{switch name="$user_info.sex" }
+						{case value="1"}男{/case}
+						{case value="2"}女{/case}
+					{/switch}
+					</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">民族</th>
+			      <th>{switch name="$user_info.nation" }
+						{case value="1"}汉{/case}
+						{case value="2"}少数民族{/case}
+						{case value="3"}其他{/case}
+					{/switch}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">籍贯</th>
+			      <th>{$user_info.native_place}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">出生地</th>
+			      <th>{$user_info.birthplace}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">政治面貌</th>
+			      <th>{switch name="$user_info.politics" }
+						{case value="1"}党员{/case}
+						{case value="2"}团员{/case}
+						{case value="3"}民主党派{/case}
+						{case value="4"}群众{/case}
+					{/switch}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">学历</th>
+			      <th>{switch name="$user_info.education" }
+						{case value="1"}全日制普通高校博士研究生{/case}
+						{case value="2"}全日制普通高校硕士研究生{/case}
+						{case value="3"}全日制普通高校本科{/case}
+						{case value="4"}全日制普通高校专科{/case}
+						{case value="5"}在职研究生{/case}
+						{case value="6"}国民教育本科{/case}
+						{case value="7"}国民教育专科{/case}
+						{case value="8"}高中及其以下{/case}
+					{/switch}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">毕业院校</th>
+			      <th>{$user_info.school}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">专业</th>
+			      <th>{$user_info.major}</th>
+			    </tr>
+			    <tr>
+			      <th style="width: 10%">工作经历</th>
+			      <th>{$user_info.work_experience}</th>
+			    </tr>
+			  </thead>
+			</table>
+        	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+			  <legend>相关文件</legend>
+			</fieldset> 
+			<table class="layui-table"  lay-filter="test">
+			  <thead>
+			  	{volist name="file_list" id="vo"}
+				    <tr>
+			    	{switch name="$vo.type" }
+							{case value="pid"}
+								<th style="width: 10%">身份证</th>
+							    <th><img src="<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>{$vo.url}"  alt="" class="layui-upload-img" > </th>
+							{/case}
+							{case value="education"}
+								<th style="width: 10%">学历证明</th>
+							    <th><a href="<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>{$vo.url}">{$vo.file_name_id}</a></th>
+							{/case}
+							{case value="cunzhao"}
+								<th style="width: 10%">寸照</th>
+							    <th><img src="<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>{$vo.url}"  alt="" class="layui-upload-img" > </th>
+							{/case}
+							{case value="other"}
+								<th style="width: 10%">其他</th>
+							    <th><a href="<?php echo 'http://'.$_SERVER['HTTP_HOST']; ?>{$vo.url}">{$vo.file_name_id}</a></th>
+							{/case}
+					{/switch}
+				    </tr>
+			    {/volist}
+			  </thead>
+			</table>
+            <!-- 表单结束 -->
+        </div>
+        <div class="form-group padding-20 bordered-top-1 bordered-platinum">
+            <button class="layui-btn layui-btn-danger" id="baocun3_return">上一步</button>
+            <button class="btn btn-primary btn-lg" id="baocun3">提交</button>
+        </div>
+    </div>
+
+	<div class="footer margin-top-50">
+	    <div class="con-w footer-inner  padding-top-30 text-center">
+	        <dl>
+	            <dt>
+	            空港人力-报名系统
+	            </dt>
+	            <dd>
+	            <a href="#" target="_blank">联系方式</a>
+	            </dd>
+	        </dl>
+	        <dl class="">
+	            <dt>
+	            微信公众号
+	            </dt>
+	            <dd>
+	            <a><img src="__STATIC__/demo/weixin.jpg" width="100"></a>
+	            </dd>
+	        </dl>
+	    </div>
+	    <p class=" text-center darkgray padding-top-10">© 2020 空港人力 | 渝ICP备xxxxxx号 | 通讯地址：重庆市渝北区春华大道99号<br>招聘报名系统　版权所有</p>
+	</div>
+
+</body>
+</html>
+<script src="__STATIC__/layer/2.4/layer.js" charset="utf-8"></script>
+	
+<script>
+
+//返回上传文件
+$("#baocun3_return").click(function () {
+	layer.confirm('确认返回吗？', {
+	  btn: ['确认','取消'] //按钮
+	}, function(){
+		$(location).attr('href', '/kgrlenroll/public/index.php/index/index/enroll_file?job_id={$job_info.id}');
+	}, function(){
+	});
+})
+
+$("#baocun3").click(function () {
+	layer.confirm('确认提交吗？', {
+	  btn: ['确认','取消'] //按钮
+	}, function(){
+		$.ajax({
+	        type:"POST",
+	        dataType:"json",
+	        url:"{:url('Index/index/enroll_end')}",
+	        data:{job_id:{$job_info.id},user_id:{$user_id}},
+	        success:function(data){
+	          if (data.code == 1) {
+	            layer.msg('提交成功', {time: 2000, icon:6});
+	            $(location).attr('href', '/kgrlenroll/public/index.php/index/index/enroll_state?job_id={$job_info.id}');
+	          }else{
+	            layer.msg(data.msg, {time: 2000, icon:5});
+	            layer.close(index);
+	            return false;
+	          }
+	        }
+	    });
+	}, function(){
+	});
+})
+
+</script>

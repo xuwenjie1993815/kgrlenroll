@@ -1,0 +1,137 @@
+{include file="../application/admin/view/Public/_meta.html"/}
+ <body>
+        <div class="layui-fluid">
+            <div class="layui-row">
+                <form class="layui-form">
+					<div class="layui-form-item">
+						<label class="layui-form-label"><span class="x-red">*</span>岗位名称:</label>
+						<div class="layui-input-inline">
+	                            <input type="text" id="name" name="name" required="" lay-verify="required" autocomplete="off" class="layui-input">
+	                        </div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label"><span class="x-red">*</span>所属单位名称:</label>
+						<div class="layui-input-inline">
+	                            <input type="text" id="company" name="company" required="" lay-verify="required" autocomplete="off" class="layui-input">
+	                        </div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label"><span class="x-red">*</span>需求人数:</label>
+						<div class="layui-input-inline">
+	                        <input type="number" id="num" name="num" required="" lay-verify="required" autocomplete="off" class="layui-input">
+	                    </div>
+					</div>
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label">岗位职责:</label>
+						<div class="layui-input-block">
+						  <textarea placeholder="请输入内容" class="layui-textarea" name="responsibilities" id="responsibilities"></textarea>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">专业要求:</label>
+						<div class="layui-input-inline">
+	                            <input type="text" id="major" name="major" required=""  autocomplete="off" class="layui-input">
+	                        </div>
+					</div>
+
+
+				    <div class="layui-form-item">
+				      <label class="layui-form-label"><span class="x-red">*</span>学历:</label>
+				      <div class="layui-input-inline">
+				        <select name="education" lay-verify="required">
+				          <option value="1">不限学历</option>
+				          <option value="2">高中及以上</option>
+				          <option value="3">专科及以上</option>
+				          <option value="4">本科及以上</option>
+				          <option value="5">硕士及以上</option>
+				        </select>
+				      </div>
+				      <input type="checkbox" name="quanrizhi" title="全日制" checked="">
+				    </div>
+
+
+					<div class="layui-form-item">
+						<div class="layui-inline">
+						  <label class="layui-form-label"><span class="x-red">*</span>年龄范围:</label>
+						  <div class="layui-input-inline" style="width: 100px;">
+						    <input type="number" name="age_min" placeholder="" autocomplete="off" class="layui-input">
+						  </div>
+						  <div class="layui-form-mid">-</div>
+						  <div class="layui-input-inline" style="width: 100px;">
+						    <input type="number" name="age_max" placeholder="" autocomplete="off" class="layui-input">
+						  </div>
+						</div>
+					</div>
+
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">人员类别要求:</label>
+					    <div class="layui-input-block">
+					      <input type="checkbox" name="dangyuan" title="党员">
+					      <input type="checkbox" name="junren" title="退伍军人">
+					    </div>
+					  </div>
+
+                    <div class="layui-form-item">
+				      <label class="layui-form-label"><span class="x-red">*</span>工作经验:</label>
+				      <div class="layui-input-inline">
+				        <select id="work_experience"  autocomplete="off" name="work_experience" lay-verify="required">
+				          <option value="1">不限</option>
+				          <option value="2">在校/应届</option>
+				          <option value="3">3年及以下</option>
+				          <option value="4">3-5年</option>
+				          <option value="5">5-10年</option>
+				          <option value="6">10年以上</option>
+				        </select>
+				      </div>
+				    </div>
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label">备注:</label>
+						<div class="layui-input-block">
+						  <textarea placeholder="请输入内容" class="layui-textarea" name="other" id="other"></textarea>
+						</div>
+					</div>
+			        <div class="layui-form-item">
+			            <label for="L_repass" class="layui-form-label"></label>
+			            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button>
+			        </div>
+			    </form>
+			</div>
+        </div>
+
+
+{include file="../application/admin/view/Public/_footer.html"/}<!-- 配置文件 -->
+	    
+    <script>
+
+    	layui.use(['form', 'layer'],function() {
+            $ = layui.jquery;
+            var form = layui.form;
+            layer = layui.layer;
+            //监听提交
+            form.on('submit(add)',function(data) {
+                //发异步，把数据提交给php
+                var index = layer.load(1, {time: 10*1000}); //0代表加载的风格，支持0-2
+
+                $.ajax({
+                    type:"POST",
+                    dataType:"json",
+                    url:"{:url('Admin/index/recruit_job_add')}",
+                    data:{data:data.field,recruit_id:{$id}},
+                    success:function(data){
+                      if (data.code == 1) {
+                      	window.parent.location.reload();//刷新父页面
+			            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			            parent.layer.close(index);
+                      }else{
+                        layer.msg(data.msg, {time: 2000, icon:5});
+                        layer.close(index);
+                        return false;
+                      }
+                    }
+                });
+            });
+        });
+       
+    </script>
+
+</html>

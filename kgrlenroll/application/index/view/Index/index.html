@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html ng-app="MyApp" class="ng-scope"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <!--Basic Styles--> 
+        <link href="__STATIC__/demo/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/demo/font-awesome.min.css" rel="stylesheet">
+        <link id="beyond-link" href="__STATIC__/demo/beyond.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="__STATIC__/demo/auiicon.css">
+        <link rel="stylesheet" href="__STATIC__/demo/base.css">
+        <link rel="stylesheet" href="__STATIC__/demo/opensans.css">
+        <link href="__STATIC__/demo/darkblue.min.css" rel="stylesheet" type="text/css">
+        <link href="__STATIC__/demo/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+        <script src="__STATIC__/demo/jquery.min.js"></script>
+        <script src="__STATIC__/demo/jquery.slimscroll.min.js"></script>
+        <script src="__STATIC__/demo/jquery.cookie.js"></script>
+        <script src="__STATIC__/demo/toastr.js"></script>
+        <script src="__STATIC__/demo/angular.min.js"></script>
+        <script src="__STATIC__/demo/jquerysession.js"></script>
+        <script src="__STATIC__/demo/ngStorage.min.js"></script>
+        <script src="__STATIC__/demo/jquery.lazyload.js"></script>
+        <title>
+        空港人力-报名系统    
+    	</title>
+        
+        <link href="__STATIC__/demo/indexcss/index.css" rel="stylesheet">
+        <!-- 外部引入的css文件模块 -->
+    	<link rel="stylesheet" href="__STATIC__/demo/swiper.min.css">
+        <!-- 页面头部style样式模块 -->
+        <link href="__STATIC__/demo/indexcss/index1.css" rel="stylesheet">
+   
+
+        
+    <link rel="stylesheet" href="__STATIC__/demo/layer.css" id="layui_layer_skinlayercss" style=""></head>
+    <body>
+        {include file="../application/index/view/Public/_header.html"/}
+        
+    <!-- 网站主体内容模块 -->
+    <div class="in-banner">
+        <div class="swiper-container swiper-container-horizontal swiper-container-fade">
+                <div class="swiper-wrapper" style="transition-duration: 1500ms;">
+                    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 1903px; transform: translate3d(-1903px, 0px, 0px); opacity: 1; transition-duration: 1500ms;">
+                        <a href="#" target="_blank">
+                            <img src="__STATIC__/demo/indeximg/u=2702002094,2244238678&fm=26&gp=0.jpg" alt="" class="in-banner-pic">
+                        </a>
+                    </div>
+                 </div>
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                	<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+        </div>    
+    </div>
+    <div class="content index-sy no-padding-top">
+        <!-- 正在报名 -->
+        <div class="margin-top-30">
+        	<style type="text/css">
+	        	@media screen and (max-width: 2000px) {
+	        		.ul_ing{
+					    width: 75%;
+	        		}
+		            .ul_ing li {
+		        		float: left;
+					    width: 32%;
+					    margin-right: 1%;
+					    background: #fff;
+					    padding: 10px;
+					    margin-bottom: 15px;
+	        		}
+		        	.ul_ing li h4>a{
+		        		line-height: 26px;
+					    height: 52px;
+					    display: block;
+		        	}
+
+		        }
+
+		        @media screen and (max-width: 1000px) {
+		            .ul_ing li {
+		        		float: left;
+					    width: 49%;
+					    margin-right: 1%;
+					    background: #fff;
+					    padding: 10px;
+					    margin-bottom: 15px;
+	        		}
+		        	.ul_ing li h4>a{
+		        		line-height: 26px;
+					    height: 52px;
+					    display: block;
+		        	}
+		        }
+	        </style>
+        	<div class="margin-top-30">
+		        <h2 class="padding-bottom-20 hnew">正在报名</h2>
+		        <!-- class="actlist-thumb-ul" -->
+		        
+		        <ul class="ul_ing">
+                    {volist name="recruit_list" id="vo"}
+		            <li>
+		                <a href="#" class="act-thumb-pic sHoverItem">
+		                    <img src="__STATIC__/demo/indeximg/logo.jpg" onerror="this.src=&#39;/Public/img/hd-default.png&#39;">
+		                </a>
+		                <h4 class="bordered-bottom-1 bordered-ivory">
+		                    <a href="#" class="text-ellipsis-2 slate-gray font-90">
+                                {$vo.title}
+		                    </a>
+		                </h4>
+		                <div class="actlist-thumb-mask">
+		                    <p class="darkgray no-margin-bottom cur tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="报名时间">
+		                        报名时间:<br>
+		                        <span style="color: red"> <?php echo substr($vo['start_time'],5)?> </span>
+		                        <span class="hidden-xs" style="color: red"> ～ <?php echo substr($vo['end_time'],5)?></span>
+		                    </p>
+		                    <div class=" padding-top-5 act-thumb-btnbox">
+
+		                        <a href="/kgrlenroll/public/index.php/index/index/detail?id={$vo.id}" class="btn btn-primary pull-right">我要报名</a>
+		                    </div>
+		                    <div class="clearfix"></div>
+		                </div>
+		            </li>
+                    {/volist}         
+		        </ul>
+		    </div>
+
+
+           
+            <!-- 全部结束 -->
+            <script src="__STATIC__/demo/swiper.min.js"></script>
+            <!-- 最新发布 -->
+            
+            <div class="in-hot pull-right" style="margin-top: -5%">
+                <h2 class="padding-bottom-20">报名预告</h2>
+                <ul class="in-hot-lists bg-white">
+                    <li>
+                        <span class="in-hot-num pull-left text-center themeprimary ">1</span>
+                        <a href="#" class="text-ellipsis-1 pull-left margin-left-10" alt="『官方报名』报名通道" title="『官方报名』报名通道">
+                            『官方报名』报名通道                                
+                        </a>
+                    </li>                                     
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="margin-top-30">
+	        <h2 class="padding-bottom-20 hnew">历史报名/考试结果</h2>
+	        <ul class="actlist-thumb-ul">
+	            <li>
+	                <a href="#" class="act-thumb-pic sHoverItem">
+	                    <img src="__STATIC__/demo/indeximg/logo.jpg" onerror="this.src=&#39;/Public/img/hd-default.png&#39;">
+	                </a>
+	                <h4 class="bordered-bottom-1 bordered-ivory">
+	                    <a href="#" class="text-ellipsis-2 slate-gray font-90">
+	                        2020先进制造业大会暨长三角G60科创走廊制造业高质量发展合作论坛                                
+	                    </a>
+	                </h4>
+	                <div class="actlist-thumb-mask">
+	                    <p class="darkgray no-margin-bottom cur tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="活动时间">
+	                        <i class="fa fa-clock-o margin-right-5"></i>
+	                        <span>09-03 09:00</span>
+	                        <span class="hidden-xs"> ～ 09-04 18:00</span>
+	                    </p>
+	                    <p class="darkgray no-margin-bottom cur pull-left tooltip-primary" data-toggle="tooltip" data-placement="right" data-original-title="浏览量">
+	                        <i class="fa fa-eye margin-right-5"></i>228                                
+	                    </p>
+	                    <div class=" padding-top-5 act-thumb-btnbox">
+	                        <a href="#" class="btn btn-primary pull-right">我要报名</a>                   
+	                    </div>
+	                    <div class="clearfix"></div>
+	                </div>
+	            </li>
+	            <li>
+	                <a href="#" class="act-thumb-pic sHoverItem">
+	                    <img src="__STATIC__/demo/indeximg/logo.jpg" onerror="this.src=&#39;/Public/img/hd-default.png&#39;">
+	                </a>
+	                <h4 class="bordered-bottom-1 bordered-ivory">
+	                    <a href="#" class="text-ellipsis-2 slate-gray font-90">
+	                        2020第八届InsurHealth健康保险科技峰会【上海站】                                </a>
+	                </h4>
+	                <div class="actlist-thumb-mask">
+	                    <p class="darkgray no-margin-bottom cur tooltip-primary" data-toggle="tooltip" data-placement="top" data-original-title="活动时间">
+	                        <i class="fa fa-clock-o margin-right-5"></i>
+	                        <span>08-28 09:00</span>
+	                        <span class="hidden-xs"> ～ 08-28 18:00</span>
+	                    </p>
+	                    <p class="darkgray no-margin-bottom cur pull-left tooltip-primary" data-toggle="tooltip" data-placement="right" data-original-title="浏览量">
+	                        <i class="fa fa-eye margin-right-5"></i>378                                </p>
+	                    <div class=" padding-top-5 act-thumb-btnbox">
+	                       <a href="#" class="btn btn-primary pull-right">我要报名</a>                                
+	                   	</div>
+	                    <div class="clearfix"></div>
+	                </div>
+	            </li>                
+	        </ul>
+        </div>
+    </div>
+
+       
+        <!-- 网站底部内容模块 -->
+        <div class="footer margin-top-50">
+            <div class="con-w footer-inner  padding-top-30 text-center">
+                <dl>
+                    <dt>
+                    空港人力-报名系统
+                    </dt>
+                    <dd>
+                    <a href="#" target="_blank">联系方式</a>
+                    </dd>
+                </dl>
+                <dl class="">
+                    <dt>
+                    微信公众号
+                    </dt>
+                    <dd>
+                    <a><img src="" width="100"></a>
+                    </dd>
+                </dl>
+            </div>
+            <p class=" text-center darkgray padding-top-10">© 2020 空港人力 | 渝ICP备xxxxxx号 | 通讯地址：重庆市渝北区春华大道99号<br>招聘报名系统　版权所有</p>
+        </div>
+        
+        {include file="../application/index/view/Public/_footer.html"/}
+        <script src="__STATIC__/demo/bootstrap.min.js"></script>
+        <!--日期控件-->
+        
+        <script type="text/javascript" src="__STATIC__/demo/layer.js"></script>
+        
+        
+    <script>
+        
+        var swiperbanner = new Swiper('.in-banner .swiper-container', {
+            pagination: '.in-banner .swiper-pagination',
+            nextButton: '.in-banner .swiper-button-next',
+            prevButton: '.in-banner .swiper-button-prev',
+            paginationClickable: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: 5000,
+            speed: 1500,
+            effect: "fade",
+            autoplayDisableOnInteraction: false,
+            loop: true
+        });
+    </script>
+   
+  
+
+
+
+</body></html>

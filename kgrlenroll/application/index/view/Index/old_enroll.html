@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://www.hdh.im/details/5da97eb36623661f183c986e -->
+<html ng-app="MyApp" class="ng-scope"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="__STATIC__/x_admin/lib/layui/layui.js" charset="utf-8"></script>
+
+	<style type="text/css">
+		/* 公共属性 */
+		*{margin:0;padding:0;list-style:none;}
+		body{background:#fff;font:normal 12px/22px "Microsoft Yahei";}
+		img{border:0;}
+		a{text-decoration:none;color:#333;}
+		a:hover{color:#1974A1;}
+		.clearfix:after,.clearfix:before{display:table;line-height:0;content:""}
+		.clearfix:after{clear:both}
+
+		/* 主要样式 */
+		.container{width:1180px;margin-right:auto;margin-left:auto;*zoom:1}
+		.process{padding:80px 0;text-align:center;}
+		.process h3{font-size:30px;line-height:52px;color:#23292E;font-weight:400;}
+		.process p{line-height:26px;font-size:14px;color:#999;}
+		.process .flowline{margin-top:50px;margin-left:40px;*zoom:1}
+		.process .flowline li{float:left;margin-left:110px;text-align:center;list-style:none}
+		.process .flowline li .icon-block{position:relative;display:inline-block;width:72px;height:72px;-webkit-border-radius:72px;-moz-border-radius:72px;border-radius:72px;background-color:#181820;line-height:0;margin-top:0}
+		.process .flowline li .icon-block img{width:32px;height:32px;background:url(../images/icon.png) 0 0 no-repeat;background-size:192px 64px;margin:20px 20px 0 20px}
+		.process .flowline li .icon-block:before{content:''}
+		.process .flowline li .icon-block span{margin:0}
+		.process .flowline li span{display:inline-block;margin-top:20px;font-size:18px;line-height:36px;color:#333}
+
+		.process .flowline li.process-1{margin-left:28%}
+		.process .flowline li.process-3{margin-left:115px}
+		.process .flowline li.process-3 .flow-line{display:none}
+		.process .flowline .flow-line{position:absolute;top:36px;left:92px;width:77px;border-bottom:1px dotted #979797}.
+	</style>
+        <title>空港人力-招聘报名系统</title>
+        
+        
+        <!-- 指定以最新的IE版本模式来显示网页 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 针对360浏览器的内核调用,强制调用极速模式 -->
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        
+        <!--Basic Styles-->
+        <link href="__STATIC__/demo/bootstrap.min.css" rel="stylesheet">
+        <link href="__STATIC__/demo/font-awesome.min.css" rel="stylesheet">
+        <link id="beyond-link" href="__STATIC__/demo/beyond.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="__STATIC__/demo/auiicon.css">
+        <link rel="stylesheet" href="__STATIC__/demo/base.css">
+        <link rel="stylesheet" href="__STATIC__/demo/opensans.css">
+        <link href="__STATIC__/demo/darkblue.min.css" rel="stylesheet" type="text/css">
+        <link href="__STATIC__/demo/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+        <script src="__STATIC__/demo/jquery.min.js"></script>
+        <!-- 外部引入的css文件模块 -->
+        <!-- 页面头部style样式模块 -->
+<body>
+	<div class="act-intro-header bg-white" style="display: block;">
+        <div style="margin-left: 2%">            
+		    <a href="http://www.kgrlenroll.com/kgrlenroll/public" class="hd-per-tit pull-left">
+		        <img class="pc-logo" src="__STATIC__/demo/indeximg/logo.jpg" width="140" height="44">
+		    </a>
+		</div>        
+	</div>
+
+	<!-- 进度 -->
+	<section class="process">
+		<div class="container">
+			<h3>报名流程</h3>
+			<p>仅需3步，即可完成报名</p>
+			<ul class="flowline clearfix">
+				<li class="process-module process-1">
+					<span class="icon-block">
+						<img src="__STATIC__/demo/img/msg.png" alt="上传基本信息" style="background-position: -32px 0"> <br /> 
+						<span class="flow-line"></span>
+					</span>
+					<br />
+					<span style="font-weight:bold;">基本信息</span>
+				</li>
+				<li class="process-module process-2">
+					<span class="icon-block">
+						<img src="__STATIC__/demo/img/file.png" alt="上传相关文件" style="background-position: -64px 0"> <br /> 
+						<span class="flow-line"></span>
+					</span>
+					<br /> 
+					<span>相关文件</span> 
+				</li>
+				<li class="process-module process-3">
+					<span class="icon-block">
+						<img src="__STATIC__/demo/img/check.png" alt="核对信息,提交审核" style="background-position: -96px 0"> <br /> 
+						<span class="flow-line"></span> 
+					</span>
+					<br />
+					<span>核对信息</span> 
+				</li>
+			</ul> 
+		</div>
+	</section>
+	<!-- 进度 -->
+
+
+
+
+    <div class="hd-entry-wrap con-w  personal">
+        <div class=" hd-entry-left">
+            <div class="entry-l-brief bg-white padding-20 margin-bottom-20">
+                <div class="entry-bri-right pull-left padding-top-10">
+                    <a href=""><h3 class="text-ellipsis-2">{$recruit_info.title}</h3></a>
+                    <p class=" ">
+                        报名时间:<?php echo $plan['start_time']?> ～ <?php echo $plan['end_time']?>	                   
+                    </p>
+                    <p>
+                    	报名单位/岗位: <span style="color: red">{$job_info.company}/{$job_info.name}</span>
+                    </p>
+                </div>
+
+                <div class="entry-bri-left pull-left">
+                <a href="">
+                    <img src="#" ></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <!-- 表单开始 -->
+            <form>
+                <div class="entry-l-second bg-white margin-top-30 padding-left-10 ng-scope" id="bminfo" ng-controller="danrenbaomingCtrl">
+                    <div class="entry-sec-box padding-20">
+                        <h4 class="bordered-bottom-1 bordered-platinum padding-top-20 padding-bottom-20">填写基本信息 </h4>
+                        <div class="row form-group ">
+                            <div class="col-xs-4 margin-top-20">
+                                <label>姓名<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="请填写真实姓名" required="" lay-verify="required">
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>身份证号码<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control" id="pid" name="pid" placeholder="请填写身份证号码" required="required">
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>手机号码<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="tel" name="tel" ng-model="tel" placeholder="请填写有效手机号码" required="required">
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>通讯地址<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="address" name="address" ng-model="address" placeholder="请填写通讯地址" required="required">
+                            </div>
+
+                            <div class="col-xs-4 margin-top-20">
+                                <label>性别<span class="darkorange"> *</span></label>
+                                <select class="form-control" id="sex" name="sex">
+							      <option value="1">男</option>
+							      <option value="2">女</option>
+							    </select>
+                            </div>
+
+                            <div class="col-xs-4 margin-top-20">
+                                <label>民族<span class="darkorange"> *</span></label>
+                                <select class="form-control" id="nation" name="nation">
+							      <option value="1">汉</option>
+							      <option value="2">少数民族</option>
+							      <option value="3">其他</option>
+							    </select>
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>籍贯<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control" id="native_place" name="native_place" placeholder="籍贯" required="required">
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>出生地<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control" id="birthplace" name="birthplace" placeholder="出生地" required="required">
+                            </div>
+
+                            <div class="col-xs-4 margin-top-20">
+                                <label>政治面貌<span class="darkorange"> *</span></label>
+                                <select class="form-control" id="politics" name="politics">
+							      <option value="1">党员</option>
+							      <option value="2">团员</option>
+							      <option value="3">民主党派</option>
+							      <option value="4">群众</option>
+							    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entry-sec-box padding-20">
+                        <h4 class="bordered-bottom-1 bordered-platinum padding-top-20 padding-bottom-20">填写学历信息 </h4>
+                        <div class="row form-group ">
+                           
+                            <div class="col-xs-4 margin-top-20">
+                                <label>学历<span class="darkorange"> *</span></label>
+                                <select class="form-control" id="education" name="education">
+							      <option value="1">全日制普通高校博士研究生</option>
+							      <option value="2">全日制普通高校硕士研究生</option>
+							      <option value="3">全日制普通高校本科</option>
+							      <option value="4">全日制普通高校专科</option>
+							      <option value="5">在职研究生</option>
+							      <option value="6">国民教育本科</option>
+							      <option value="7">国民教育专科</option>
+							      <option value="8">高中及其以下</option>
+							    </select>
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>毕业院校<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control" id="school" name="school" placeholder="请填写最高学历学校名称" required="required">
+                            </div>
+                            <div class="col-xs-4 margin-top-20">
+                                <label>专业<span class="darkorange"> *</span></label>
+                                <input type="text" class="form-control" id="major" name="major" placeholder="请填写最高学历专业" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entry-sec-box padding-20">
+                        <h4 class="bordered-bottom-1 bordered-platinum padding-top-20 padding-bottom-20">填写工作信息 </h4>
+                        <div class="row form-group ">
+                            <div class="col-xs-4 margin-top-20">
+                                <label>工作经历<span class="darkorange"> *</span></label>
+                                <textarea class="form-control" id="work_experience" name="work_experience" rows="5" placeholder="例：何年何月至何年何月   在何单位   从事何工作  职务职称"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group padding-20 bordered-top-1 bordered-platinum">
+                        <button class="btn btn-primary btn-lg" id="baocun">下一步</button>
+                    </div>
+                </div>
+            </form>
+            <!-- 表单结束 -->
+        </div>
+    </div>
+
+<input type="hidden" id="job_info_major" value="{$job_info.major}">
+	<div class="footer margin-top-50">
+	    <div class="con-w footer-inner  padding-top-30 text-center">
+	        <dl>
+	            <dt>
+	            空港人力-报名系统
+	            </dt>
+	            <dd>
+	            <a href="#" target="_blank">联系方式</a>
+	            </dd>
+	        </dl>
+	        <dl class="">
+	            <dt>
+	            微信公众号
+	            </dt>
+	            <dd>
+	            <a><img src="__STATIC__/demo/weixin.jpg" width="100"></a>
+	            </dd>
+	        </dl>
+	    </div>
+	    <p class=" text-center darkgray padding-top-10">© 2020 空港人力 | 渝ICP备xxxxxx号 | 通讯地址：重庆市渝北区春华大道99号<br>招聘报名系统　版权所有</p>
+	</div>
+
+</body>
+</html>
+<script src="__STATIC__/layer/2.4/layer.js" charset="utf-8"></script>
+
+
+
+<script type="text/javascript">
+
+
+	$("#baocun").click(function() {
+		if ($("#name").val() == '') {
+			layer.msg('请填写姓名', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		var index = layer.load(4, {time: 10*1000});
+		if (judge_id($("#pid").val()) != '1') {
+			layer.msg('请填写正确的身份证号码', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#tel").val() == '' && $("#tel").val().length != 11) {
+			layer.msg('请填写正确的手机号', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#address").val() == '') {
+			layer.msg('请填写通讯地址', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#native_place").val() == '') {
+			layer.msg('请填写籍贯', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#birthplace").val() == '') {
+			layer.msg('请填写出生地', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#school").val() == '') {
+			layer.msg('请填写毕业院校', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#major").val() == '') {
+			layer.msg('请填写专业', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		if ($("#work_experience").val() == '') {
+			layer.msg('请填写工作经历', {time: 2000, icon:5});
+			layer.close(index);
+			return false;
+		}
+		var major = $("#job_info_major").val();
+		if ($("#major").val() != '' && $("#major").val() != '不限' && $("#major").val() != major) {
+			//询问框
+			layer.confirm('您填写的专业与岗位需求专业不符或有出入,是否继续报名？', {
+			  btn: ['确定','取消'] //按钮
+			}, function(){
+				$.ajax({
+		            type: "POST",//方法类型
+		            dataType: "json",//预期服务器返回的数据类型
+		            url: "{:url('Index/index/enroll')}" ,//url
+		            data: {name:$("#name").val(),pid:$("#pid").val(),tel:$("#tel").val(),address:$("#address0").val(),sex:$("#sex").val(),nation:$("#nation").val(),native_place:$("#native_place").val(),birthplace:$("#birthplace").val(),politics:$("#politics").val(),education:$("#education").val(),major:$("#major").val(),school:$("#school").val(),work_experience:$("#work_experience").val()},
+		            success: function (data) {
+		                if (data.code == 1) {
+		                    alert("SUCCESS");
+		                }else{
+							layer.msg(data.msg, {time: 2000, icon:5});
+		                    layer.close(index);
+		                	return false;
+		                }
+		            },
+		            error : function() {
+		            	layer.msg("系统异常,请稍后..", {time: 2000, icon:5});
+		            }
+		        });
+			}, function(){
+			  	layer.msg("已取消", {time: 2000, icon:5});
+			});
+		}else{
+			$.ajax({
+	            type: "POST",//方法类型
+	            dataType: "json",//预期服务器返回的数据类型
+	            url: "{:url('Index/index/enroll')}" ,//url
+	            data: {name:$("#name").val(),pid:$("#pid").val(),tel:$("#tel").val(),address:$("#address0").val(),sex:$("#sex").val(),nation:$("#nation").val(),native_place:$("#native_place").val(),birthplace:$("#birthplace").val(),politics:$("#politics").val(),education:$("#education").val(),major:$("#major").val(),school:$("#school").val(),work_experience:$("#work_experience").val()},
+	            success: function (data) {
+	                if (data.code == 1) {
+	                    alert("SUCCESS");
+	                }else{
+						layer.msg(data.msg, {time: 2000, icon:5});
+	                    layer.close(index);
+	                	return false;
+	                }
+	            },
+	            error : function() {
+	            	layer.msg("系统异常,请稍后..", {time: 2000, icon:5});
+	            }
+	        });
+		}
+		
+		
+		
+	});
+
+	//身份证验证
+	function judge_id(id) {
+		var my_id = id;
+		my_id = my_id.toUpperCase();
+		if (my_id.length == 18) {
+		//判断是否18位
+		  //正则判断是否符合身份证的格式
+		 if (!/^\d{17}\d|X$/i.test(my_id)) {
+		      return 0;
+		  } else {
+		     //定义身份证号前17位的校验权
+		     var arr_right = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+		    //前17位运算后的正确校验码
+		     var arr_valid = [1, 0, "X", 9, 8, 7, 6, 5, 4, 3, 2];
+		     var sum = 0, check_code;
+		     for (var i = 0; i < my_id.length-1; i++) {
+		         sum += parseInt(my_id[i]) * arr_right[i];
+		     }
+		     check_code = sum % 11;
+		     if (arr_valid[check_code] == my_id.substr(17,1)) {
+		         return 1;
+		     } else {
+		         return 0;
+		     }
+		 }
+		} else {
+		 return 0;
+		}
+	}
+
+    
+</script>
